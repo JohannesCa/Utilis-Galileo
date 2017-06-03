@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="container center-align">
+        <div class="row">
+            <img id="bg" src="{{ url_for('video_feed') }}">
+        </div>
+        <div class="row">
+            <a href="/" target="_blank" class="waves-effect waves-light btn"
+                onclick="javascript: setTimeout(window.close, 10);">Retornar</a>
+        </div>
+    </div>
+{% endblock %}

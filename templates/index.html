@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block content %}
+	<div class="container center-align">
+		<table>
+	        <thead>
+	          	<tr>
+	            	<th>Dispositivo</th>
+	              	<th>Estado</th>
+	              	<th>Switch</th>
+	        	</tr>
+	        </thead>
+	        <tbody>
+	        	{% for pin in dpins %}
+		          	<tr>
+			            <td>{{ dpins[pin].name }}</td>
+			            <td>{{ dpins[pin].value }}</td>
+			            <td>
+			            {% if dpins[pin].value == true %}
+			            	<a href="/api/digital/{{pin}}/off" class="waves-effect waves-light btn">
+			            		Turn off</a>
+			            {% else %}
+			            	<a href="/api/digital/{{pin}}/on" class="waves-effect waves-light btn">
+			            		Turn on</a>
+			            {% endif %}
+			            </td>
+			        </tr>
+		        {% endfor %}
+		       	{% for pin in apins %}
+		          	<tr>
+			            <td>{{ apins[pin].name }}</td>
+			            <td>{{ apins[pin].value }}</td>
+			            <td><a href="/api/analog/{{pin}}/read" class="waves-effect waves-light btn">
+			            	Read</a></td>
+			        </tr>
+		        {% endfor %}
+        	</tbody>
+      	</table>
+	</div>
+	{% if stream == true %}
+	<table>
+		<tbody>
+			<tr><td></td></tr>
+			<tr><td></td></tr>
+		</tbody>
+	</table>
+	<div class="container center-align">
+		<div class="row">
+			<h5>Video Stream</h5>
+			<a href="/stream" class="waves-effect waves-light btn" target="_blank"
+				onclick="javascript: setTimeout(window.close, 10);">Ver Stream</a>
+		</div>
+	</div>
+	{% endif %}
+{% endblock %}

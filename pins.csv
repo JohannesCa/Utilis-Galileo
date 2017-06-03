@@ -1,0 +1,5 @@
+8,Led,out
+0,Luminosidade,analog
+1,Temperatura,analog
+7,Tomada 1,out
+4,Tomada 2,out
