@@ -17,9 +17,9 @@ SETUP/PIN CONFIGURATION
 
 To setup devices table you should edit ['_pins.csv_'](https://github.com/JohannesCa/Utilis-Galileo/blob/master/pins.csv "pins.csv") in the following format
 
-><pin>,<device_name>,<device_type>
+>pin,device_name,device_type
 
-where <pin> is the physical pin number in Galileo board (it'll do an internal mapping to GPIO), <device_name> is the desired device's name and <device_type> is the device's type witch can be '_out_' (digital) or '_analog_'.
+where *pin* is the physical pin number in Galileo board (it'll do an internal mapping to GPIO), *device_name* is the desired device's name and *device_type* is the device's type witch can be '_out_' (digital) or '_analog_'.
 
 
 RUNNING
